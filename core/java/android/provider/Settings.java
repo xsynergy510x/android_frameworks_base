@@ -2191,6 +2191,13 @@ public final class Settings {
         @Deprecated
         public static final String QS_SHOW_BRIGHTNESS_SLIDER = Secure.QS_SHOW_BRIGHTNESS_SLIDER;
 
+        /** 
+         * Quick Settings Smart Pulldown
+         *  
+         * @hide    
+         */ 
+        public static final String QS_SMART_PULLDOWN = "qs_smart_pulldown";
+
         /**
          * List of QS tile names
          * @deprecated Use {@link android.provider.Settings.Secure#QS_TILES} instead
