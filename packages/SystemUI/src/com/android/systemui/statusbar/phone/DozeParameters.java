@@ -122,6 +122,7 @@ public class DozeParameters {
         return pickup
                 ? getInt("doze.pulse.delay.in.pickup", R.integer.doze_pulse_delay_in_pickup)
                 : getInt("doze.pulse.delay.in", R.integer.doze_pulse_delay_in);
+    }
 
     public int getPulseInDuration() {
         if (getOverwriteValue()) {
