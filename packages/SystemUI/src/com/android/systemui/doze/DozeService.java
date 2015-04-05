@@ -169,7 +169,7 @@ public class DozeService extends DreamService implements ProximitySensorManager.
         if (mDozeParameters.getPocketMode()) {
             startPulsingFromSensor();
         } else {
-            requestPulse();
+            requestPulse(DozeLog.PULSE_REASON_SENSOR_SIGMOTION);
         }
     }
 
@@ -233,7 +233,7 @@ public class DozeService extends DreamService implements ProximitySensorManager.
                     }
                     mWakeLock.release(); // needs to be unconditional to balance acquire
                 }
-            });
+            }, DozeLog.PULSE_REASON_SENSOR_SIGMOTION);
         }
     }
 
@@ -328,7 +328,7 @@ public class DozeService extends DreamService implements ProximitySensorManager.
                     }
                     // avoid pulsing in pockets
                     final boolean isAccSensor = mUseAccelerometer && mDozeParameters.getShakeMode();
-                    DozeLog.traceProximityResult(isNear, SystemClock.uptimeMillis() - start);
+                    DozeLog.traceProximityResult(isNear, SystemClock.uptimeMillis() - start, reason);
                     if (isNear) {
                         mPulsing = false;
                         mWakeLock.release();
