@@ -4971,16 +4971,12 @@ public class PackageManagerService extends IPackageManager.Stub {
             } catch (RemoteException e) {
             }
         } else {
-	    final int messageRes = R.string.android_installing_apk;
-
             try {
                 ActivityManagerNative.getDefault().showBootMessage(
-                        mContext.getResources().getString(messageRes,
+                        mContext.getResources().getString(R.string.android_upgrading_apk,
                                 curr, total), true);
             } catch (RemoteException e) {
-	    }
-	}
-
+            }
         PackageParser.Package p = pkg;
         synchronized (mInstallLock) {
             performDexOptLI(p, null /* instruction sets */, false /* force dex */,
