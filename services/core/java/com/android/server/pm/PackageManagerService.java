@@ -4977,6 +4977,7 @@ public class PackageManagerService extends IPackageManager.Stub {
                                 curr, total), true);
             } catch (RemoteException e) {
             }
+	}
         PackageParser.Package p = pkg;
         synchronized (mInstallLock) {
             performDexOptLI(p, null /* instruction sets */, false /* force dex */,
