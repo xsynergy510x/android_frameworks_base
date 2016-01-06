@@ -479,36 +479,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
             if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.BATTERY_SAVER_MODE_COLOR))) {
-                    mBatterySaverWarningColor = Settings.System.getIntForUser(
-                            mContext.getContentResolver(),
-                            Settings.System.BATTERY_SAVER_MODE_COLOR, 1,
-                            UserHandle.USER_CURRENT);
-                    if (mBatterySaverWarningColor != 0) {
-                        mBatterySaverWarningColor = mContext.getResources()
-                                .getColor(com.android.internal.R.color.battery_saver_mode_color);
-                    }
-            } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT))) {
-                    recreateStatusBar();
-                    updateRowStates();
-                    updateSpeedbump();
-                    updateClearAll();
-                    updateEmptyShadeView();
-            } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE))
-                    || uri.equals(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_WEATHER_COLOR))
-                    || uri.equals(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_WEATHER_SIZE))
-                    || uri.equals(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_WEATHER_FONT_STYLE))) {
-                    recreateStatusBar();
-                    updateRowStates();
-                    updateSpeedbump();
-                    updateClearAll();
-                    updateEmptyShadeView();
-            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.ENABLE_TASK_MANAGER))) {
                     mShowTaskManager = Settings.System.getIntForUser(
                             mContext.getContentResolver(),
