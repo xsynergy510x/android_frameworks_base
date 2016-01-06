@@ -185,8 +185,7 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
         mSettingsButton = (SettingsButton) findViewById(R.id.settings_button);
         mSettingsContainer = findViewById(R.id.settings_button_container);
         mSettingsButton.setOnClickListener(this);
-        if (Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.ENABLE_TASK_MANAGER, 0) == 1) {
+        if (getResources().getBoolean(R.bool.config_showTaskManagerSwitcher)) {
             mTaskManagerButton = findViewById(R.id.task_manager_button);
         }
         mQsDetailHeader = findViewById(R.id.qs_detail_header);
