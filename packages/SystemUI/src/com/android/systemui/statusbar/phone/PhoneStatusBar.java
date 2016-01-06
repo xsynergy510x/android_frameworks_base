@@ -520,6 +520,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     updateClearAll();
                     updateEmptyShadeView();
             }
+>>>>>>> 4e20cbf... Task manager improvements
             update();
         }
 
