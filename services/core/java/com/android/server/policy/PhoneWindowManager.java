@@ -7083,8 +7083,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     mBootMsgDialog.setMessage(Html.fromHtml(msg + "<br><b>" + currentPackageName + "</b>"));
                 }
                 else {
-                    mBootMsgDialog.setMessage("CyanogenMod 13.0 by Synergy510\n\n" + msg +
-			"\n\nunofficial builds");
+                    mBootMsgDialog.setMessage(msg);
                 }
             }
         });
